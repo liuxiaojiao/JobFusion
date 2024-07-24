@@ -36,5 +36,16 @@ Provide comprehensive AI assistance for updating resumes, crafting cover letters
 
 
 ## Milestones:
-- MVP development timeline: Jul 24, 2024 -- Aug 31, 2024
+- [x] MVP draft: Jul 23, 2024
+- [ ] MVP development timeline: Jul 24, 2024 -- Aug 31, 2024
    
+
+## Run JobFusion Application:
+- Local hosting through streamlit:
+
+env: python==3.10; 
+Change .env.example.txt to .env with valid API keys
+
+```pip install -r requirements.txt``` 
+
+```streamlit run jobfusion_app.py```

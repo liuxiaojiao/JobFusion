@@ -1,0 +1,6 @@
+crewai==0.28.8
+streamlit==1.36.0
+openpyxl
+docx2txt
+textract
+crewai_tools==0.2.2

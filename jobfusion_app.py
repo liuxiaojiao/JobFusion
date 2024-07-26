@@ -10,10 +10,12 @@ import os
 import streamlit as st
 import docx2txt
 
-from dotenv import load_dotenv
-load_dotenv()
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
-openai_api_key = os.getenv('OPENAI_API_KEY')
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"] 
+openai_api_key = st.secrets["OPENAI_API_KEY"]
 llm_35_turbo = ChatOpenAI(api_key=openai_api_key, model='gpt-3.5-turbo')
 
 class JobFusion_Crew():

@@ -15,7 +15,7 @@ class JobFusion_Tasks():
     def research_task(self, agent):
         return Task(description=dedent(f'''
             Analyze the provided job description to extract key skills, experiences and qualifications required, based on 
-            the following job descriptions URL.
+            the following given job descriptions URL.
             {self.__tip_section()}
 
             Job description URL: {self.jd_url}

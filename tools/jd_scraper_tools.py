@@ -34,7 +34,6 @@ class JDScraperTools(BaseTool):
         '''
         # Send a GET request to the page
         response = requests.get(jd_url)
-        import pdb;pdb.set_trace()
         # Parse the page content
         soup = BeautifulSoup(response.content, 'html.parser')
 

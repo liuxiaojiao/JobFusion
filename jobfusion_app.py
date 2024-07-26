@@ -70,6 +70,7 @@ if __name__ == "__main__":
 
         save_path = os.path.join("streamlit/", uploaded_resume.name)
         os.makedirs(os.path.dirname(save_path), exist_ok=True)
+        os.makedirs("output/", exist_ok=True)
         with open(save_path, "wb") as f:
             f.write(uploaded_resume.getbuffer())
         upload_resume = False

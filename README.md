@@ -49,3 +49,5 @@ Change .env.example.txt to .env with valid API keys
 ```pip install -r requirements.txt``` 
 
 ```streamlit run jobfusion_app.py```
+
+- This MVP is available for a public URL on Streamlit Cloud

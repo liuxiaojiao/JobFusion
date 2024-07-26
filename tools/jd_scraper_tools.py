@@ -14,12 +14,14 @@ from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 import os
 from crewai_tools import BaseTool
+import streamlit as st
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
-# Load the .env file
-load_dotenv()
-# Get the OPENAI_API_KEY
-openai_api_key = os.getenv('OPENAI_API_KEY')
-# Create the llm
+
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"] 
+openai_api_key = st.secrets["OPENAI_API_KEY"]
 llm_35_turbo = ChatOpenAI(api_key=openai_api_key, model='gpt-3.5-turbo') # Loading GPT-3.5-turbo model
 
 class JDScraperTools(BaseTool):
@@ -63,9 +65,4 @@ class JDScraperTools(BaseTool):
         df_list.append(df)
 
         return "\n\n".join(important_findings)
-
-
-if __name__ == "__main__":
-    jd_url = "https://www.upwork.com/jobs/~01b868457e01c14ad5"
-    important_findings = JDScraperTools()._run(jd_url = jd_url)
 

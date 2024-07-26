@@ -7,6 +7,7 @@ import os
 # from tools.browser_tools import BrowserTools
 from crewai_tools import ScrapeWebsiteTool, DOCXSearchTool, SeleniumScrapingTool
 
+import streamlit as st
 os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"] 
 openai_api_key = st.secrets["OPENAI_API_KEY"]
 llm_35_turbo = ChatOpenAI(api_key=openai_api_key, model='gpt-3.5-turbo')

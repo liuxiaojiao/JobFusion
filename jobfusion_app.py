@@ -5,7 +5,6 @@ from jobfusion_tasks import JobFusion_Tasks
 from langchain.chat_models import ChatOpenAI
 from textwrap import dedent
 import tempfile
-import textract
 import os
 import streamlit as st
 import docx2txt

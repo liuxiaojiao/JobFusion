@@ -1,0 +1,26 @@
+Skills and Expertise:
+- Machine Learning
+- Deliverables
+- AI Agent Development
+- AI Development
+- RAG
+- LLM
+- Prompt Engineering
+
+Responsibilities:
+- Design and implement a RAG system combining retrieval mechanisms with GPT.
+- Optimize indexing and search algorithms for efficient retrieval of contextually relevant information.
+- Fine-tune GPT models on domain-specific datasets to improve response accuracy.
+- Integrate the retrieval system with GPT to generate high-quality, contextually accurate responses.
+- Implement continuous learning and feedback loops to refine the system.
+
+Experience Level:
+- Expert
+
+Project Type:
+- Contract-to-hire
+
+Hourly Rate:
+- $33.00 - $182.00
+
+Potential for full-time role.

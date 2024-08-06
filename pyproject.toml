@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "self-improve-crew"
+version = "0.1.0"
+description = "AI-powered self improvement agentic workflow to boost purpose wellbeing"
+authors = ["Diana Liu"]
+readme = "README.md"
+packages = [{include = "self_improve_crew"}]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<=3.13"
+torch = "^1.11.0"
+crewai = "^0.28.8"
+crewai_tools = "^0.1.6"
+openai = "^1.13.3"
+langchain = "^0.1.10"
+langchain-openai = "^0.0.5"
+langchain_community = "^0.0.29"
+pytest = "^8.0.0"
+chromadb = "0.4.22"
+requests = "^2.31.0"
+streamlit = "^1.36.0"
+sentence-transformers = "^3.0.1"
+faiss-cpu = "^1.8.0"
+rank_bm25 = "^0.2.2"
+openpyxl = "^3.1.5"
+docx2txt = "^0.8"
+pydantic = "^2.6.1"
+python-dotenv = "^1.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -64,8 +64,12 @@ def doc_load_split(files):
 def build_vectordb(docs):
     embeddings = OpenAIEmbeddings()
     vectordb = FAISS.from_documents(docs, embeddings)
-    index_folder_path = 'output/faiss_index'
+    index_folder_path = 'output/faiss_index_chatbot'
     index_name = 'faiss_0'
+
+    if not os.path.exists(index_folder_path):
+        os.makedirs(index_folder_path)
+
     if len(os.listdir(index_folder_path)) == 0:
         print('Creating FAISS index...')
         vectordb.save_local(index_folder_path, index_name)

@@ -7,11 +7,11 @@ import os
 # from tools.browser_tools import BrowserTools
 from crewai_tools import ScrapeWebsiteTool, DOCXSearchTool, SeleniumScrapingTool
 
-load_dotenv()
-openai_api_key = os.getenv('OPENAI_API_KEY')
+import streamlit as st
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"] 
+openai_api_key = st.secrets["OPENAI_API_KEY"]
 llm_35_turbo = ChatOpenAI(api_key=openai_api_key, model='gpt-3.5-turbo')
-# client = TavilyClient(api_key=os.environ.get("TAVILY_API_KEY"))
-# llm = ChatOpenAI(model='gpt-3.5') # Loading GPT-3.5 instead of GPT-4
+
 
 class JobFusion_Agents():
     def __init__(self, resume_input, jd_url_input):
@@ -26,8 +26,7 @@ class JobFusion_Agents():
                 job postings is unmatched. Your skills help pinpoint the necessary qualifications and skills \
                 sought by employers, forming the foundation for effective application tailoring.'),
             llm=llm_35_turbo,
-            # tools=[ScrapeWebsiteTool(self.jd_url)],
-            tools=[ScrapeWebsiteTool(self.jd_url)],
+            tools=[ScrapeWebsiteTool(website_url=self.jd_url)],
             allow_delegation=False,
             verbose=True,
             max_iter=5)

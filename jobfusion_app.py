@@ -5,15 +5,16 @@ from jobfusion_tasks import JobFusion_Tasks
 from langchain.chat_models import ChatOpenAI
 from textwrap import dedent
 import tempfile
-import textract
 import os
 import streamlit as st
 import docx2txt
 
-from dotenv import load_dotenv
-load_dotenv()
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
-openai_api_key = os.getenv('OPENAI_API_KEY')
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"] 
+openai_api_key = st.secrets["OPENAI_API_KEY"]
 llm_35_turbo = ChatOpenAI(api_key=openai_api_key, model='gpt-3.5-turbo')
 
 class JobFusion_Crew():
@@ -69,6 +70,7 @@ if __name__ == "__main__":
 
         save_path = os.path.join("streamlit/", uploaded_resume.name)
         os.makedirs(os.path.dirname(save_path), exist_ok=True)
+        os.makedirs("output/", exist_ok=True)
         with open(save_path, "wb") as f:
             f.write(uploaded_resume.getbuffer())
         upload_resume = False

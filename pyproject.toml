@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "self-improve-crew"
+name = "career-crew"
 version = "0.1.0"
-description = "AI-powered self improvement agentic workflow to boost purpose wellbeing"
+description = "AI-powered career service with an agentic workflow designed to help you excel in job interviews."
 authors = ["Diana Liu"]
 readme = "README.md"
-packages = [{include = "self_improve_crew"}]
+packages = [{include = "career_crew"}]
 
 [tool.poetry.dependencies]
 python = ">=3.10,<=3.13"

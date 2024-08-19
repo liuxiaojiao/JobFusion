@@ -1,9 +1,9 @@
 """
-CareerAdvisor Application Script
+JobFusion Application Script
 
 Purpose:
 --------
-This script serves as the core functionality for the CareerAdvisor application, which provides users with tools for managing their career-related documents and offers guidance on career development. 
+This script serves as the core functionality for the JobFusion application, which provides users with tools for managing their career-related documents and offers guidance on career development. 
 The script is divided into three main functionalities:
 
 1. Build Docs: provides updated resume and cover letter based on job postings. Users can upload their documents and input a job URL, 
@@ -25,7 +25,7 @@ environment: peotry install based on pyproject.toml; OpenAI API key is required
 
 script usage: poetry run streamlit run final_jobfusion_app2.py
 
-Date: 2024-08-18
+1st Version Date: 2024-08-18
 """
 import os
 import sys
@@ -172,7 +172,8 @@ def main():
                 with open(personal_writeup_path, "wb") as f:
                     f.write(uploaded_personal_writeup.getbuffer())
 
-                # JobFusionCrew(resume_path, personal_writeup_path, jd_url_input).run()
+                # Run the JobFusionCrew process
+                JobFusionCrew(resume_path, personal_writeup_path, jd_url_input).run()
                 logger.debug('Agentic Workflow finished')
             else:
                 st.error("Please upload both resume and personal writeup.")

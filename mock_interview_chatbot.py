@@ -15,19 +15,26 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.retrievers.document_compressors import LLMChainExtractor
 
 import streamlit as st
-__import__('pysqlite3')
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+# __import__('pysqlite3')
+# sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 # # Load OpenAI API key from local env
-# from dotenv import load_dotenv
-# load_dotenv()
-# openai_api_key = os.getenv('OPENAI_API_KEY')
+from dotenv import load_dotenv
+load_dotenv()
+openai_api_key = os.getenv('OPENAI_API_KEY')
 
 # Load OpenAI API key from streamlit 
-os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"] 
-openai_api_key = st.secrets["OPENAI_API_KEY"]
+# os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"] 
+# openai_api_key = st.secrets["OPENAI_API_KEY"]
 llm_35_turbo = ChatOpenAI(api_key=openai_api_key, model='gpt-3.5-turbo', temperature=0.7)
 
+# Function to read in .txt files
+def read_txt_files(txt_file_path):
+    file_content = []
+    with open(txt_file_path, 'r', encoding='utf-8') as file:
+        content = file.read()
+        file_content.append(content)
+    return file_content
 
 # Function to load files
 def file_loading(file_path):
@@ -69,12 +76,11 @@ def build_vectordb(docs):
 
     if not os.path.exists(index_folder_path):
         os.makedirs(index_folder_path)
-
     if len(os.listdir(index_folder_path)) == 0:
         print('Creating FAISS index...')
         vectordb.save_local(index_folder_path, index_name)
     else: 
-        print('Loading FAISS index....')
+        print('Loading FAISS index for chat!....')
         vectordb = FAISS.load_local(index_folder_path, embeddings, index_name, allow_dangerous_deserialization=True)
     return vectordb
 

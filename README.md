@@ -48,11 +48,11 @@ Change .env.example.txt to .env with valid API keys
 
 ```pip install -r requirements.txt``` 
 
-```streamlit run jobfusion_app.py```
+```streamlit run final_jobfusion_app2.py```
 
 or
 ```poetry install```/```poetry update```; ```peotry shell```
 
-```poetry run streamlit run jobfusion_app.py```
+```poetry run streamlit run final_jobfusion_app2.py```
 
 - This MVP is available for a public URL on Streamlit Cloud

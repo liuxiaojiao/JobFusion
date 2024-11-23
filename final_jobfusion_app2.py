@@ -43,7 +43,10 @@ from dotenv import load_dotenv
 from Config import configure as cfg
 from mock_interview_chatbot import *
 import streamlit as st
+<<<<<<< HEAD
 from _to_pdf import *
+=======
+>>>>>>> origin/job_fusion_fr
 
 # Set up logging
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')

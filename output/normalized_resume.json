@@ -1,0 +1,54 @@
+{
+  "name": "Diana Liu",
+  "title": "",
+  "contact": {
+    "email": "lxjiao0805@gmail.com",
+    "phone": "202.739.1368"
+  },
+  "experience": [
+    {
+      "company": "AI Data Scientist Freelancer",
+      "title": "AI Data Scientist Freelancer",
+      "date": "March 2023 – present",
+      "location": "Remote"
+    },
+    {
+      "company": "Fidelity Investment",
+      "title": "Principal Data Scientist",
+      "date": "June 2020 – present",
+      "location": "Fairfax, VA (remote)"
+    }
+  ],
+  "education": [
+    {
+      "school": "Stanford University",
+      "degree": "Professional Degree in Artificial Intelligence",
+      "date": "Dec 2022",
+      "location": "Stanford, CA"
+    },
+    {
+      "school": "The George Washington University",
+      "degree": "Master of Science in Statistics",
+      "date": "May 2012",
+      "location": "Washington, DC"
+    },
+    {
+      "school": "Capital University of Economics and Business (Beijing, CHINA)",
+      "degree": "Bachelor of Science in Mathematical Statistics",
+      "date": "Jul 2010",
+      "location": "Beijing, China"
+    }
+  ],
+  "skills": [
+    "Python",
+    "Pandas",
+    "TensorFlow",
+    "Apache Hadoop",
+    "Amazon Redshift",
+    "AWS",
+    "NLTK",
+    "Apache Kafka",
+    "Git",
+    "Docker"
+  ]
+}

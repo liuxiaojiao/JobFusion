@@ -1,0 +1,54 @@
+{
+    "personal_info": {
+        "name": "Diana Liu",
+        "title": "AI Data Scientist Freelancer",
+        "summary": "Proficient in mathematical statistics, econometrics, machine learning and deep learning. Offering 15 years of extensive project management expertise with a deep involvement in experimental design, data integration and cleansing, feature engineering, as well as mastery in machine learning, optimization, and deep learning implementations. With extensive experience in leveraging advanced AI technologies, I have successfully utilized prompt engineering, Retrieval-Augmented Generation (RAG), and agents to develop robust applications that address complex business challenges, automate processes, and drive business growth.",
+        "contact": {
+            "email": "lxjiao0805@gmail.com",
+            "phone": "202.739.1368",
+            "location": "",
+            "linkedin": ""
+        }
+    },
+    "work_experience": [
+        {
+            "company": "AI Data Scientist Freelancer",
+            "position": "Freelancer",
+            "duration": "March 2023 - present",
+            "location": "",
+            "achievements": [
+                "Enhance product descriptions and recommendations through various recommender systems.",
+                "Support development and evaluation of internal survey automation pipeline which improves the efficiency of data extract, transform, load (ETL), anomalous detection, weighting and exporting.",
+                "Collaborate with business development consultants to develop innovative winning solutions leveraging data science, conduct technical innovation to ensure statistical rigor in econometrics and modeling projects, and give internal team technical training on analytics topics like recommender system and imbalance data modeling.",
+                "Build a query generator trained on a corpus of historical expert queries with Generative Adversarial Network (GAN) architecture for a government client."
+            ]
+        }
+    ],
+    "education": [
+        {
+            "school": "Stanford University",
+            "degree": "Professional Degree in Artificial Intelligence",
+            "duration": "Dec 2022",
+            "location": ""
+        },
+        {
+            "school": "The George Washington University",
+            "degree": "Master of Science in Statistics",
+            "duration": "May 2012",
+            "location": ""
+        }
+    ],
+    "skills": [
+        "mathematical statistics",
+        "econometrics",
+        "machine learning",
+        "deep learning",
+        "project management",
+        "experimental design",
+        "data integration",
+        "feature engineering",
+        "optimization",
+        "Recommender systems",
+        "Generative Adversarial Network (GAN)"
+    ]
+}

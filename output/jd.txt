@@ -1,26 +1,19 @@
-Skills and Expertise:
-- Machine Learning
-- Deliverables
-- AI Agent Development
-- AI Development
-- RAG
-- LLM
-- Prompt Engineering
+- Necessary Skills:
+  - Extensive research expertise in generative AI, computer vision, machine learning, or NLP
+  - Excellent communication skills
+  - Excellent skills in problem solving, programming, and computer science fundamentals
+  - Solid background in statistics, math, CS, machine learning, and computer vision or NLP
+  - Expertise in generative models, 3D vision, transformers, or other computer vision, LLMs or machine learning techniques
 
-Responsibilities:
-- Design and implement a RAG system combining retrieval mechanisms with GPT.
-- Optimize indexing and search algorithms for efficient retrieval of contextually relevant information.
-- Fine-tune GPT models on domain-specific datasets to improve response accuracy.
-- Integrate the retrieval system with GPT to generate high-quality, contextually accurate responses.
-- Implement continuous learning and feedback loops to refine the system.
+- Necessary Qualifications:
+  - A PhD in CS, ECE, Statistics, or in a related, highly quantitative field
+  - 10+ years of hands-on experience in computer vision, machine learning, or NLP
+  - Proven record of developing new approaches, algorithms, application areas, etc.
+  - Extensive experience writing scientific papers, with multiple publications in top machine learning, computer vision or NLP conferences/journals
 
-Experience Level:
-- Expert
-
-Project Type:
-- Contract-to-hire
-
-Hourly Rate:
-- $33.00 - $182.00
-
-Potential for full-time role.
+- Necessary Experiences:
+  - Work with large datasets
+  - Work with software engineering teams to deploy your work
+  - Publish your work at top conferences/journals
+  - Experience in large data analysis
+  - Experience working in a fast-paced, highly collaborative, dynamic work environment

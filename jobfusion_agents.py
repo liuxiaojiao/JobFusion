@@ -2,14 +2,20 @@ from crewai import Agent
 from langchain.chat_models import ChatOpenAI
 from dotenv import load_dotenv
 import os
+from Config import configure as conf
 # from tavily import TavilyClient
 
 # from tools.browser_tools import BrowserTools
 from crewai_tools import ScrapeWebsiteTool, DOCXSearchTool, SeleniumScrapingTool
 
 import streamlit as st
-os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"] 
-openai_api_key = st.secrets["OPENAI_API_KEY"]
+# os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"] 
+
+# openai_api_key = st.secrets["OPENAI_API_KEY"]
+
+load_dotenv()
+openai_api_key = os.getenv('OPENAI_API_KEY')
+
 llm_35_turbo = ChatOpenAI(api_key=openai_api_key, model='gpt-3.5-turbo')
 
 

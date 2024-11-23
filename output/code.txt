@@ -1,0 +1,35 @@
+```python
+from fpdf import FPDF
+
+# Create instance of FPDF class
+pdf = FPDF()
+pdf.set_auto_page_break(auto=True, margin=15)
+pdf.add_page()
+
+# Set font for the entire pdf
+pdf.set_font("Arial", size=12)
+
+# Add Summary
+summary = "3-hour reduction in query execution times. Automated data ingestion processes using AWS Glue, reducing manual effort by 32%. Conducted sentiment analysis on customer reviews using NLTK, providing valuable insights to the marketing team. eBay-Trainee Data Analyst 2012 - 2015 San Jose, CA Set up Kafka clusters and integrated data sources, resulting in a 30% improvement in data processing efﬁciency. Achieved a $4K reduction in infrastructure costs by containerizing data processing components. Spearheaded automated deployment scripts and version control using Git, resulting in a 27% decrease in deployment errors. Used Python and SQL to clean and preprocess data, achieving a data quality improvement of 18%."
+pdf.multi_cell(0, 10, summary)
+pdf.ln(10)  # Line break
+
+# Add Work Experience
+work_experience = "1. Fannie Mae\n- Lead Quantitative Modeler\n- Washington D.C.\n- June 2020 – August 2022\n- Apply NLP techniques for domain specific word embedding and NER using BERT/GPT-3 transfer learning, enhancing document search and recommendations via text summarization and similarity, and generate scoring algorithm to reflect the quality of review reports.\n\n2. The Gallup Organization\n- Lead Data Scientist\n- Washington D.C.\n- July 2012 – June 2020"
+pdf.multi_cell(0, 10, work_experience)
+pdf.ln(10)  # Line break
+
+# Add Education
+education = "- Stanford University\n  - Bachelor of Science, Computer Science\n  - 2008 - 2012\n  - Stanford, CA\n\n- Capital University of Economics and Business (Beijing, CHINA)\n  - Bachelor of Science in Mathematical Statistics\n  - July 2010\n  - GPA: 3.93, Rank: 1/120"
+pdf.multi_cell(0, 10, education)
+pdf.ln(10)  # Line break
+
+# Add Skills
+skills = "Python, Pandas, TensorFlow, Apache Hadoop, Amazon Redshift, AWS, NLTK, Apache Kafka, Git, Docker, SQL, LangChain, crewAI, PyTorch, Keras, PySpark, H2O, Apache Spark, SAS, Tableau"
+pdf.multi_cell(0, 10, skills)
+
+# Output the pdf
+pdf.output("resume.pdf")
+```
+
+This python code combines the summary, work experience, education, and skills into a PDF format similar to the sample resume provided.

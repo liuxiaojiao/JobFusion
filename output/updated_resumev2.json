@@ -1,0 +1,69 @@
+{
+    "personal_info": {
+        "name": "Diana Liu",
+        "title": "AI Data Scientist Freelancer",
+        "summary": "Proficient in mathematical statistics, econometrics, machine learning and deep learning. Offering 15 years of extensive project management expertise with a deep involvement in experimental design, data integration and cleansing, feature engineering, as well as mastery in machine learning, optimization, and deep learning implementations. With extensive experience in leveraging advanced AI technologies, I have successfully utilized prompt engineering, Retrieval-Augmented Generation (RAG), and agents to develop robust applications that address complex business challenges, automate processes, and drive business growth.",
+        "contact": {
+            "email": "lxjiao0805@gmail.com",
+            "phone": "202.739.1368",
+            "location": "Stanford, CA",
+            "linkedin": ""
+        }
+    },
+    "work_experience": [{
+            "company": "AI Data Scientist Freelancer",
+            "position": "AI Data Scientist Freelancer",
+            "duration": "March 2023 - present",
+            "location": "",
+            "achievements": [
+                "Enhance product descriptions and recommendations through various recommender systems.",
+                "3-hour reduction in query execution times.",
+                "Automated data ingestion processes using AWS Glue, reducing manual effort by 32%.",
+                "Conducted sentiment analysis on customer reviews using NLTK, providing valuable insights to the marketing team."
+            ]
+        },
+        {
+            "company": "eBay",
+            "position": "Trainee Data Analyst",
+            "duration": "2012 - 2015",
+            "location": "San Jose, CA",
+            "achievements": [
+                "Set up Kafka clusters and integrated data sources, resulting in a 30% improvement in data processing efficiency.",
+                "Achieved a $4K reduction in infrastructure costs by containerizing data processing components.",
+                "Spearheaded automated deployment scripts and version control using Git, resulting in a 27% decrease in deployment errors.",
+                "Used Python and SQL to clean and preprocess data, achieving a data quality improvement of 18%."
+            ]
+        }
+    ],
+    "education": [{
+            "school": "Stanford University",
+            "degree": "Professional Degree in Artificial Intelligence",
+            "duration": "Dec 2022",
+            "location": "Stanford, CA"
+        },
+        {
+            "school": "The George Washington University",
+            "degree": "Master of Science in Statistics",
+            "duration": "May 2012",
+            "location": ""
+        },
+        {
+            "school": "Capital University of Economics and Business (Beijing, CHINA)",
+            "degree": "Bachelor of Science in Mathematical Statistics",
+            "duration": "Jul 2010",
+            "location": ""
+        }
+    ],
+    "skills": [
+        "Python",
+        "Pandas",
+        "TensorFlow",
+        "Apache Hadoop",
+        "Amazon Redshift",
+        "AWS",
+        "NLTK",
+        "Apache Kafka",
+        "Git",
+        "Docker"
+    ]
+}

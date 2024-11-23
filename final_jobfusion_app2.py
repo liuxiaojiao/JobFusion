@@ -43,6 +43,7 @@ from dotenv import load_dotenv
 from Config import configure as cfg
 from mock_interview_chatbot import *
 import streamlit as st
+from _to_pdf import *
 
 # Set up logging
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -158,7 +159,7 @@ def main():
                 st.write('Processing now....')
                 logger.debug('Starting Agentic Workflow')
 
-                # create output directory to store angent outputs
+                # create output directory to store agent outputs
                 os.makedirs("output/", exist_ok=True)
 
                 # Save uploaded files
@@ -174,25 +175,37 @@ def main():
 
                 # Run the JobFusionCrew process
                 JobFusionCrew(resume_path, personal_writeup_path, jd_url_input).run()
+
+                resume_output_md_path = 'output/updated_resume.md'
+                resume_input_json_path = 'output/updated_resumev7.json'
+                create_resume_review_agent(resume_output_md_path, llm_35_turbo,manager_llm_35_turbo,resume_input_json_path).kickoff()
+                
+                with open(resume_input_json_path, 'r') as f:
+                    resume_json = f.read()
+                create_pdf_from_json(resume_json, output_filename="output/resume_v7.pdf")
+
                 logger.debug('Agentic Workflow finished')
             else:
                 st.error("Please upload both resume and personal writeup.")
                 logger.error("Both resume and personal writeup are required.")
 
-        col1, col2, col3 = st.columns([1, 1, 1])
+        col1, col2, col3, col4 = st.columns([1, 1, 1,1])
 
         # Generate and download updated documents
-        if col1.button('1 - Generate Resume'):
+        if col1.button('1 - Generate Resume (md)'):
             with open('output/updated_resume.md', 'r') as file:
                 resume_output = file.read()
             st.download_button('Download Resume', resume_output, file_name='updated_resume.txt', mime='text/plain')
-
-        if col2.button('2 - Generate Cover Letter'):
+        if col2.button('2 - Generate Resume (pdf)'):
+            with open('output/resume_v7.pdf', 'rb') as pdf_file:
+                pdf_bytes = pdf_file.read()
+            st.download_button(label='Download Resume (PDF)',data=pdf_bytes,file_name='resume.pdf',mime='application/pdf')
+        if col3.button('3 - Generate Cover Letter'):
             with open('output/coverletter.md', 'r') as file:
                 cover_letter_output = file.read()
             st.download_button('Download Cover Letter', cover_letter_output, file_name='coverletter.txt', mime='text/plain')
 
-        if col3.button('3 - Generate Interview Preparation Materials'):
+        if col4.button('4 - Generate Interview Preparation Materials'):
             with open('output/interview_preparation_materials.txt', 'r') as file:
                 interview_preparation_output = file.read()
             st.download_button('Download Interview Preparation', interview_preparation_output, file_name='interview_preparation_materials.txt', mime='text/plain')

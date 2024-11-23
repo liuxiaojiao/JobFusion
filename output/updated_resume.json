@@ -1,0 +1,65 @@
+{
+    "name": "Diana Liu",
+    "title": "AI Data Scientist Freelancer",
+    "summary": "Proficient in mathematical statistics, econometrics, machine learning, and deep learning. Offering 15 years of extensive project management expertise with a deep involvement in experimental design, data integration and cleansing, feature engineering, as well as mastery in machine learning, optimization, and deep learning implementations. With extensive experience in leveraging advanced AI technologies, successfully utilizing prompt engineering, Retrieval-Augmented Generation (RAG), and agents to develop robust applications that address complex business challenges, automate processes, and drive business growth.",
+    "contact": {
+        "email": "lxjiao0805@gmail.com",
+        "phone": "202.739.1368"
+    },
+    "experience": [
+        {
+            "company": "AI Data Scientist Freelancer",
+            "title": "AI Data Scientist Freelancer",
+            "period": "March 2023 – present",
+            "location": "Remote",
+            "bullets": [
+                "Enhance product descriptions and recommendations through various recommender systems.",
+                "Support development and evaluation of internal survey automation pipeline which improves the efficiency of data extract, transform, load (ETL), anomalous detection, weighting and exporting.",
+                "Collaborate with business development consultants to develop innovative winning solutions leveraging data science, conduct technical innovation to ensure statistical rigor in econometrics and modeling projects, and give internal team technical training on analytics topics like recommender system and imbalance data modeling.",
+                "Build a query generator trained on a corpus of historical expert queries with Generative Adversarial Network (GAN) architecture for a government client."
+            ]
+        },
+        {
+            "company": "Fidelity Investment",
+            "title": "Principal Data Scientist",
+            "period": "June 2020 – present",
+            "location": "Fairfax, VA (remote)",
+            "bullets": [
+                "Develop advanced machine learning models and optimization techniques to deliver personalized experiences and recommendations to Workplace Investing customers.",
+                "Lead the design and development of Fidelity’s content inventory and generation product, utilizing ensemble search, prompt engineering, RAG (retrieval augmented generation), and various NLP practices."
+            ]
+        }
+    ],
+    "education": [
+        {
+            "school": "Stanford University",
+            "degree": "Professional Degree in Artificial Intelligence",
+            "period": "Dec 2022",
+            "location": "Stanford, CA"
+        },
+        {
+            "school": "The George Washington University",
+            "degree": "Master of Science in Statistics",
+            "period": "May 2012",
+            "location": "Washington, DC"
+        },
+        {
+            "school": "Capital University of Economics and Business (Beijing, CHINA)",
+            "degree": "Bachelor of Science in Mathematical Statistics",
+            "period": "Jul 2010",
+            "location": "Beijing, China"
+        }
+    ],
+    "skills": [
+        "Python",
+        "Pandas",
+        "TensorFlow",
+        "Apache Hadoop",
+        "Amazon Redshift",
+        "AWS",
+        "NLTK",
+        "Apache Kafka",
+        "Git",
+        "Docker"
+    ]
+}

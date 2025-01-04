@@ -1,0 +1,60 @@
+{
+    "personal_info": {
+        "name": "John Doe",
+        "title": "Data Scientist",
+        "summary": "Experienced data scientist with a strong background in artificial intelligence, statistics, and machine learning. Skilled in Python, SQL, and various machine learning frameworks.",
+        "contact": {
+            "email": "johndoe@email.com",
+            "phone": "123-456-7890",
+            "location": "New York, NY",
+            "linkedin": "linkedin.com/in/johndoe"
+        }
+    },
+    "work_experience": [{
+        "company": "Data Science Innovations",
+        "position": "Senior Data Scientist",
+        "duration": "Jan 2018 - Present",
+        "location": "New York, NY",
+        "achievements": [
+            "Led development and evaluation of internal survey automation pipeline improving data ETL efficiency",
+            "Collaborated with business development consultants on innovative data science solutions",
+            "Built a query generator using Generative Adversarial Network (GAN) architecture"
+        ]
+    }],
+    "education": [{
+        "school": "Stanford University",
+        "degree": "Professional Degree in Artificial Intelligence",
+        "duration": "Dec 2022",
+        "location": "Stanford, CA"
+    },
+    {
+        "school": "The George Washington University",
+        "degree": "Master of Science in Statistics",
+        "duration": "May 2012",
+        "location": "Washington, D.C."
+    },
+    {
+        "school": "Capital University of Economics and Business (Beijing, CHINA)",
+        "degree": "Bachelor of Science in Mathematical Statistics",
+        "duration": "Jul 2010",
+        "location": "Beijing, China"
+    }],
+    "skills": [
+        "Python",
+        "SQL",
+        "LangChain",
+        "crewAI",
+        "AWS",
+        "PyTorch",
+        "Keras",
+        "PySpark",
+        "H2O",
+        "TensorFlow",
+        "Apache Spark",
+        "SAS",
+        "Tableau",
+        "Machine Learning",
+        "Statistics",
+        "Data Analysis"
+    ]
+}

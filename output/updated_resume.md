@@ -15,22 +15,21 @@ Skills:
 - Experience in leveraging advanced AI technologies such as prompt engineering, Retrieval-Augmented Generation (RAG), and agents
 - Technical skills include Python, SQL, LangChain, crewAI, AWS, PyTorch, Keras, PySpark, H2O, TensorFlow, Apache Spark, SAS, and Tableau
 
-Professional Experiences:
-- AI Data Scientist Freelancer (March 2023 – present)
-  - Enhance product descriptions and recommendations through various recommender systems
+Diana Liu 202.739.1368; lxjiao0805@gmail.com
 
-- Principal Data Scientist at Fidelity Investment, Fairfax, VA (remote) (June 2020 – present)
-  - Develop advanced machine learning models and optimization techniques for personalized experiences and recommendations
-  - Lead the design and development of content inventory and generation product utilizing ensemble search, prompt engineering, RAG, and NLP practices
+Proficient in mathematical statistics, econometrics, machine learning and deep learning. Offering 15 years of extensive project management expertise with a deep involvement in experimental design, data integration and cleansing, feature engineering, as well as mastery in machine learning, optimization, and deep learning implementations.
 
-- Lead Quantitative Modeler at Fannie Mae, Washington D.C. (June 2020 – August 2022)
-  - Apply NLP techniques for domain-specific word embedding and NER
-  - Enhance document search and recommendations via text summarization and similarity
-  - Generate scoring algorithm to reflect the quality of review reports
+With extensive experience in leveraging advanced AI technologies, I have successfully utilized prompt engineering, Retrieval-Augmented Generation (RAG), and agents to develop robust applications that address complex business challenges, automate processes, and drive business growth.
+
+PROFESSIONAL EXPERIENCE
+
+AI Data Scientist Freelancer March 2023 – present
+
+Enhance product descriptions and recommendations through various recommender systems.
 
 - Lead Data Scientist at The Gallup Organization, Washington D.C. (July 2012 – June 2020)
-  - Predict customer engagement, conversion, transactions, and retention for Gallup Learning E-Commerce
-  - Conduct predictive modeling for clients using various machine learning models
-  - Apply NLP techniques for market understanding and qualitative research
+- Predict customer engagement, conversion, transactions, and retention for Gallup Learning E-Commerce
+- Conduct predictive modeling for clients using various machine learning models
+- Apply NLP techniques for market understanding and qualitative research
 
 Overall, Diana Liu is a highly skilled data scientist with a strong background in mathematics, statistics, and AI technologies. She has extensive experience in project management, AI application development, and data analysis, making her a valuable asset in solving complex business problems and driving growth through data-driven insights.

@@ -1,22 +1,16 @@
-Interview Questions:
-1. Can you discuss your educational background and how it has prepared you for a career in data science and artificial intelligence?
-2. How have you applied your skills in mathematical statistics, econometrics, machine learning, and deep learning in your previous roles?
-3. Can you provide examples of projects where you utilized machine learning, optimization, and deep learning techniques to drive business growth and automate processes?
-4. In your current role at Fidelity Investment, what specific machine learning models and optimization techniques have you developed for personalized experiences and recommendations?
-5. How do you approach project management in terms of experimental design, data integration, and cleansing to deliver high-quality solutions tailored to specific business needs?
-6. What experience do you have in developing content inventory and generation products utilizing ensemble search, prompt engineering, Retrieval-Augmented Generation (RAG), and NLP practices?
-7. How do you stay updated on the latest advancements in AI technologies and how do you incorporate them into your work?
-8. Can you walk us through a challenging data science project you worked on, including the problem-solving process and the results achieved?
-9. How do you collaborate with cross-functional teams to implement AI solutions and drive business growth through data-driven insights?
-10. How do you prioritize and manage multiple projects simultaneously, ensuring timely delivery and high-quality results?
+Diana Liu Data Scientist Interview Preparation
 
-Talking Points:
-1. Highlight your Professional Degree in Artificial Intelligence from Stanford University and Master's Degree in Statistics from The George Washington University.
-2. Discuss your over a decade of experience in data science and AI technologies, emphasizing your expertise in mathematical statistics, econometrics, machine learning, and deep learning.
-3. Showcase your project management skills in experimental design, data integration, and cleansing, and how they contribute to delivering high-quality solutions.
-4. Provide examples of successful implementation of machine learning, optimization, and deep learning techniques in developing advanced AI applications.
-5. Share specific accomplishments from your role as a Principal Data Scientist at Fidelity Investment, focusing on the development of cutting-edge machine learning models and optimization techniques.
-6. Highlight your technical skills in Python, SQL, LangChain, crewAI, AWS, PyTorch, Keras, PySpark, H2O, TensorFlow, Apache Spark, SAS, and Tableau.
-7. Discuss your proficiency in leveraging advanced AI technologies such as prompt engineering, RAG, and agents to address complex business challenges and drive growth through data-driven insights.
-8. Emphasize your enthusiasm for bringing your unique blend of skills and experiences to the team at [Company Name], and how you can contribute to their success.
-9. Be prepared to discuss how your background, skills, and enthusiasms align with the specific needs of the company and the Data Scientist position.
+Key Questions and Talking Points:
+
+1. Can you walk me through your experience with mathematical statistics, econometrics, machine learning, and deep learning as outlined in your resume?
+2. How have you utilized your expertise in project management, experimental design, data integration, and cleansing in your previous roles?
+3. Can you provide examples of how you have leveraged machine learning, optimization, and deep learning implementations to address complex business challenges and drive business growth?
+4. Tell me about a specific project where you applied advanced AI technologies such as prompt engineering, Retrieval-Augmented Generation (RAG), and agents to deliver innovative solutions.
+5. How did you predict customer engagement, conversion, transactions, and retention at The Gallup Organization, and what were the outcomes of your predictive modeling efforts?
+6. How have you used NLP techniques for market understanding and qualitative research, and what insights were derived from these analyses?
+7. How do you stay current with the latest trends and advancements in data science, and how do you incorporate new methodologies into your work?
+8. In what ways do you believe your background in mathematics, statistics, and AI technologies, combined with your passion for data-driven decision-making, align with the requirements of the Data Scientist position at our company?
+9. How do you approach problem-solving and decision-making in a data-driven environment, and can you provide examples of successful projects where your analytical skills were crucial?
+10. How do you handle challenges and setbacks in your work, and what strategies do you use to overcome obstacles and achieve successful outcomes?
+
+By preparing and practicing responses to these questions and talking points, you will be able to effectively highlight key aspects of your resume and demonstrate how your skills and experiences align with the job requirements. Good luck with your interview preparation!

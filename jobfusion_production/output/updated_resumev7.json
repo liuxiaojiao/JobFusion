@@ -1,0 +1,42 @@
+{
+	"personal_info": {
+		"name": "Diana Liu",
+		"title": "AI Data Scientist Freelancer",
+		"summary": "Proficient in mathematical statistics, econometrics, machine learning and deep learning. Offering 15 years of extensive project management expertise with a deep involvement in experimental design, data integration and cleansing, feature engineering, as well as mastery in machine learning, optimization, and deep learning implementations. With extensive experience in leveraging advanced AI technologies, I have successfully utilized prompt engineering, Retrieval-Augmented Generation (RAG), and agents to develop robust applications that address complex business challenges, automate processes, and drive business growth.",
+		"contact": {
+			"email": "lxjiao0805@gmail.com",
+			"phone": "202.739.1368",
+			"location": "Washington D.C.",
+			"linkedin": ""
+		}
+	},
+	"work_experience": [{
+			"company": "AI Data Scientist Freelancer",
+			"position": "Freelancer",
+			"duration": "March 2023 - present",
+			"location": "",
+			"achievements": ["Enhanced product descriptions and recommendations through various recommender systems.", "3-hour reduction in query execution times.", "Automated data ingestion processes using AWS Glue, reducing manual effort by 32%.", "Conducted sentiment analysis on customer reviews using NLTK, providing valuable insights to the marketing team."]
+		},
+		{
+			"company": "Fannie Mae",
+			"position": "Lead Quantitative Modeler",
+			"duration": "June 2020 - August 2022",
+			"location": "Washington D.C.",
+			"achievements": ["Apply NLP techniques for domain-specific word embedding and NER using BERT/GPT-3 transfer learning, enhancing document search and recommendations via text summarization and similarity, and generate scoring algorithm to reflect the quality of review reports."]
+		},
+		{
+			"company": "The Gallup Organization",
+			"position": "Lead Data Scientist",
+			"duration": "July 2012 - June 2020",
+			"location": "Washington D.C.",
+			"achievements": []
+		}
+	],
+	"education": [{
+		"school": "Stanford University",
+		"degree": "Bachelor of Science, Computer Science",
+		"duration": "2008 - 2012",
+		"location": "Stanford, CA"
+	}],
+	"skills": ["Python", "Pandas", "TensorFlow", "Apache Hadoop", "Amazon Redshift", "AWS", "NLTK", "Apache Kafka", "Git", "Docker"]
+}

@@ -1,0 +1,28 @@
+{
+    "job_title": "Principal Applied Scientist, Amazon Prime",
+    "job_id": "2846094",
+    "job_description": "Amazon Prime’s Science organization leads the Research & Development towards innovation for Amazon Prime. Amazon Prime is the backbone of Amazon’s consumer business and aspires to be the world’s most engaging, satisfying, and loved membership program, driving growth and profitability. The program serves over 200 million members across 25 countries and is key to Amazon’s customer growth and engagement. Prime Science innovates in Artificial Intelligence and Economics, to develop algorithms and systems for automated marketing, personalization, targeting, and decisioning. To lead Prime’s growth and impact through science and innovation, we are seeking a Principal Applied Scientist, Prime Science, to create and deliver Machine Learning innovation both for customer facing and internal solutions. To be successful in this role you should be recognized as an industry expert who has experience defining a long-term science vision, driven fundamentally from the needs of customers, translating that direction into specific plans for research scientists, applied scientists, engineering, and product teams. This is a role that combines science leadership, organizational ability, technical expertise, product focus, and business understanding. Key job responsibilities- Own and drive the most complex and strategic solutions across the business; responsible for many billions in revenue.- Act as a thought leader and forward thinker, anticipating obstacles to success and helping avoid common failure modes.- Research, build, and deploy innovative machine learning solutions; working across all technical disciplines.- Partner with science, engineering, and product leaders across the business to identify and deliver innovative machine solutions; identify new opportunities, define the vision and execute solutions that continually delight customers.- Hire, mentor, and guide senior scientists; partner with engineering leaders to build efficient and scalable solutions.",
+    "basic_qualifications": {
+        "Ph.D.": "in Machine Learning, Computer Science, or related disciplines",
+        "Experience": "10+ years of post-Ph.D. experience, delivering highly effect machine learning solutions that solve real-world problems at a very large scale",
+        "Skills": [
+            "Expert in machine learning, statistics, and experiment design",
+            "Expert in taking machine learning solutions into production at a large scale",
+            "Experience with Large Language Models and Generative AI",
+            "Experience hiring and building teams of applied scientists",
+            "Proven communication and collaboration skills that enable you to earn trust at all levels of a large organization; ability to influence"
+        ]
+    },
+    "preferred_qualifications": {
+        "Experience": "10+ years of innovative machine learning research experience, with strong analytic and problem-solving skills",
+        "Skills": [
+            "Expert level skills across many Machine Learning methodologies",
+            "Published research work in academic conferences or industry circles",
+            "Experience delivering complex end-to-end global ML solutions that run at very big scale",
+            "Effective verbal and written communication skills with non-technical and technical audiences",
+            "Experience working with real-world data sets and building scalable models from big data",
+            "Thinks strategically, but stays on top of tactical execution",
+            "Exhibits excellent business judgment; balances business, product, and technology very well"
+        ]
+    }
+}

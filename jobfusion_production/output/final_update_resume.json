@@ -1,0 +1,54 @@
+{
+    "personal_info": {
+        "name": "John Doe",
+        "title": "Data Scientist",
+        "summary": "Experienced data scientist with a strong background in machine learning and statistics",
+        "contact": {
+            "email": "johndoe@email.com",
+            "phone": "123-456-7890",
+            "location": "San Francisco, CA",
+            "linkedin": "linkedin.com/in/johndoe"
+        }
+    },
+    "work_experience": [{
+            "company": "ABC Data Solutions",
+            "position": "Data Scientist",
+            "duration": "Jan 2018 - Present",
+            "location": "San Francisco, CA",
+            "achievements": [
+                "Led development and evaluation of internal survey automation pipeline, improving data ETL efficiency",
+                "Collaborated with business development consultants to deliver innovative solutions leveraging data science",
+                "Conducted technical innovation to ensure statistical rigor in econometrics and modeling projects",
+                "Provided technical training on analytics topics like recommender system and imbalance data modeling"
+            ]
+        }
+    ],
+    "education": [{
+            "school": "Stanford University",
+            "degree": "Professional Degree in Artificial Intelligence",
+            "duration": "Dec 2022",
+            "location": "Stanford, CA"
+        },
+        {
+            "school": "The George Washington University",
+            "degree": "Master of Science in Statistics",
+            "duration": "May 2012",
+            "location": "Washington, D.C."
+        }
+    ],
+    "skills": [
+        "Python",
+        "SQL",
+        "LangChain",
+        "crewAI",
+        "AWS",
+        "PyTorch",
+        "Keras",
+        "PySpark",
+        "H2O",
+        "TensorFlow",
+        "Apache Spark",
+        "SAS",
+        "Tableau"
+    ]
+}

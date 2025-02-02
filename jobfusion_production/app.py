@@ -1,6 +1,3 @@
-
-
-
 from dotenv import load_dotenv
 from crewai import Crew, Task, Agent, Process
 from crewai_tools import ScrapeWebsiteTool
@@ -12,21 +9,24 @@ import streamlit as st
 import docx2txt
 from crewai import Crew, Task, Agent, Process
 from crewai_tools import ScrapeWebsiteTool
-from jobfusion_agents import JobFusion_Agents
-from jobfusion_tasks import JobFusion_Tasks
-from jobfusion2_agents import JobFusion2_Agents
-from jobfusion2_tasks import JobFusion2_Tasks
+# from jobfusion_agents import JobFusion_Agents
+# from jobfusion_tasks import JobFusion_Tasks
+# from jobfusion2_agents import JobFusion2_Agents
+# from jobfusion2_tasks import JobFusion2_Tasks
 from langchain.chat_models import ChatOpenAI
 from dotenv import load_dotenv
 from config import configure as cfg
 from mock_interview_chatbot import *
+
+
+
 import streamlit as st
 import logging
 from datetime import datetime
 
 from agents import ResumeAgents, EnhancementAgents
 from tasks import ResumeTasks, EnhancementTasks
-from .utils import create_pdf_from_json, ResumeCrew, ResumeEnhanceCrew
+from utils import create_pdf_from_json, ResumeCrew, ResumeEnhanceCrew
 
 load_dotenv()
 openai_api_key = os.getenv('OPENAI_API_KEY')
@@ -71,12 +71,25 @@ def main():
 
                 personal_writeup_path = os.path.join("streamlit/", uploaded_personal_writeup.name)
                 os.makedirs(os.path.dirname(personal_writeup_path), exist_ok=True)
+
+                valid_resume = '/Users/frankwei/Documents/Side_Project/jobfusion_subj/JobFusion/jobfusion_production/output/resume.json'
+                # resume_file = '/Users/frankwei/Documents/Side_Project/jobfusion_subj/JobFusion/jobfusion_production/output/resume.json'
+                job_file = '/Users/frankwei/Documents/Side_Project/jobfusion_subj/JobFusion/jobfusion_production/output/job.json'
+                modified_resume_file = '/Users/frankwei/Documents/Side_Project/jobfusion_subj/JobFusion/jobfusion_production/output/enhanced_resume.json'
+                reviewed_resume_file = '/Users/frankwei/Documents/Side_Project/jobfusion_subj/JobFusion/jobfusion_production/output/reviewed_resume.json'
+                final_resume_file = '/Users/frankwei/Documents/Side_Project/jobfusion_subj/JobFusion/jobfusion_production/output/final_updated_resume.json'
+
+                # json_data = '/Users/frankwei/Documents/Side_Project/jobfusion_subj/JobFusion/jobfusion_production/output/final_update_resume.json'
+                output_filename = '/Users/frankwei/Documents/Side_Project/jobfusion_subj/JobFusion/jobfusion_production/output/resume.pdf'
+                
                 with open(personal_writeup_path, "wb") as f:
                     f.write(uploaded_personal_writeup.getbuffer())
 
                 # Run the JobFusionCrew process
-                ResumeAgents(resume_path, personal_writeup_path, jd_url_input).run()
-                
+                # ResumeAgents(resume_path, personal_writeup_path, jd_url_input, valid_resume).run()
+                ResumeCrew(openai_api_key, jd_url_input, resume_path, valid_resume).run()
+                ResumeEnhanceCrew(openai_api_key, valid_resume, job_file, modified_resume_file, reviewed_resume_file, final_resume_file).run()
+                create_pdf_from_json(final_resume_file, output_filename)
                 logger.debug('Agentic Workflow finished')
             else:
                 st.error("Please upload both resume and personal writeup.")
@@ -131,20 +144,12 @@ def main():
             latest_resume_input = 'output/updated_resume.md'
             jd_qualifications_input = 'output/jd.txt'
             
-            resume_file = '/Users/frankwei/Documents/Side_Project/jobfusion_subj/JobFusion/jobfusion_production/inputs/resume_AI.docx'
-            job_url = 'https://www.amazon.jobs/en/jobs/2846094/principal-applied-scientist-amazon-prime'
-            valid_resume = '/Users/frankwei/Documents/Side_Project/jobfusion_subj/JobFusion/jobfusion_production/output/resume.json'
-
-
-            resume_file = '/Users/frankwei/Documents/Side_Project/jobfusion_subj/JobFusion/jobfusion_production/output/resume.json'
-            job_file = '/Users/frankwei/Documents/Side_Project/jobfusion_subj/JobFusion/jobfusion_production/output/job.json'
-            modified_resume_file = '/Users/frankwei/Documents/Side_Project/jobfusion_subj/JobFusion/jobfusion_production/output/enhanced_resume.json'
-            reviewed_resume_file = '/Users/frankwei/Documents/Side_Project/jobfusion_subj/JobFusion/jobfusion_production/output/reviewed_resume.json'
-            final_resume_file = '/Users/frankwei/Documents/Side_Project/jobfusion_subj/JobFusion/jobfusion_production/output/final_resume.json'
 
             # Run the JobFusionCrew2 process
-            ResumeCrew(openai_api_key, job_url, resume_file,valid_resume).run()
-            ResumeEnhanceCrew(openai_api_key, resume_file, job_file, modified_resume_file, reviewed_resume_file, final_resume_file).run()
+            
+            # ResumeEnhanceCrew(openai_api_key, resume_file, job_file, modified_resume_file, reviewed_resume_file, final_resume_file).run()
+            
+            # JobFusionCrew2(ori_resume_input, ori_personal_writeup_input, latest_resume_input, jd_qualifications_input, users_feedback).run()
             # JobFusionCrew2(ori_resume_input, ori_personal_writeup_input, latest_resume_input, jd_qualifications_input, users_feedback).run()
             logger.debug('Agentic Workflow JobFusionCrew2 finished')
 
@@ -162,21 +167,139 @@ def main():
             st.download_button('Download Revised Cover Letter', cover_letter_output, file_name='revised_coverletter.txt', mime='text/plain')
 
     # Tab 3: Career Advice/Mock Interview Chatbot
-    with tab3:
+    # with tab3:
+    #     st.subheader('Career Advice Chatbot')
+    #     st.write('You can chat with Career Adviser.')
+    #     chat_container = st.container(height=300)
+
+    #     # Ensure the necessary documents are uploaded
+    #     if uploaded_resume and uploaded_personal_writeup and jd_url_input:
+    #         logger.debug('Starting Career Advice Chatbot')
+
+    #         # Load files and prepare vector database for chatbot
+    #         files = file_loading("inputs/contents/")
+    #         docs = doc_load_split(files)
+    #         db = build_vectordb(docs)
+            
+    #         # Process user documents for chatbot context
+    #         resume_path = os.path.join("streamlit/", uploaded_resume.name)
+    #         personal_writeup_path = os.path.join("streamlit/", uploaded_personal_writeup.name)
+    #         user_resume = docx2txt.process(resume_path)
+    #         user_personal_writeup = docx2txt.process(personal_writeup_path)
+    #         job_qualifications = []
+    #         with open("output/jd.txt", 'r', encoding='utf-8') as file:
+    #             content = file.read()
+    #             job_qualifications.append(content)
+    #         logger.debug("Resume and personal writeup loaded successfully.")
+
+    #         # Initialize chat history if not already set
+    #         if 'chat_history' in st.session_state:
+    #             chat_history = st.session_state['chat_history']
+    #         else:
+    #             chat_history = []
+
+    #         # Store generated responses
+    #         if "messages" not in st.session_state.keys():
+    #             st.session_state.messages = [{"role": "assistant", "content": "How may I help you?"}]
+
+    #         # Display chat messages
+    #         for message in st.session_state.messages:
+    #             with chat_container.chat_message(message["role"]):
+    #                 st.write(message["content"])
+            
+    #         # If vector database is ready, initialize the QA chain
+    #         if db:
+    #             chat_history = st.session_state.get('chat_history', [])
+    #             qa_chain = get_qa_chain(
+    #                 db, k=3, chain_type="stuff", user_resume=user_resume, 
+    #                 user_personal_writeup=user_personal_writeup, job_qualifications=job_qualifications,
+    #                 openai_api_key=openai_api_key, chat_history=chat_history
+    #             )
+
+    #             # Handle user input in the chat
+    #             if prompt := st.chat_input("How can I help you?"):
+    #                 if prompt is not None:
+    #                     st.session_state.messages.append({'role': 'user', 'content': prompt})
+    #                     with chat_container.chat_message('user'):
+    #                         st.write(f'{prompt}')
+    #                     with chat_container.chat_message('assistant'):
+    #                         message_placeholder = st.empty()
+    #                         full_response = ""
+    #                         bot_response = qa_chain.run({"question": prompt, "chat_history": chat_history})
+    #                         for chunk in re.findall(r'\S+|\n', bot_response):
+    #                             full_response += chunk + " "
+    #                             time.sleep(0.05)
+    #                             message_placeholder.markdown(full_response + "▌")
+    #                         message_placeholder.markdown(full_response)
+    #                         chat_history = update_chat_history(chat_history, prompt, bot_response)
+
+    #                         # Update chat history in session state
+    #                         st.session_state['chat_history'] = chat_history
+    #                         st.session_state.messages.append({'role': 'assistant', 'content': bot_response})
+    #         else:
+    #             st.error("Failed to build vector database.")
+    #             logger.error("Failed to build vector database.")
+
+    #         # End chat and collect feedback
+    #         if 'chat_history' in st.session_state and st.button('Finish the Chat'):
+    #             st.write("Thank you for using the Career Advisor chatbot! Have a great day!")
+    #             feedback_text = st.text_area("Please provide feedback on your experience with the chatbot:")
+    #             if st.button("Submit Feedback"):
+    #                 st.write("Feedback submitted. Thank you!")
+    #                 st.stop()
+
+    import os
+    import json
+    import random
+    import time
+    import streamlit as st
+    from mock_interview_chatbot_orig import *  
+    # from mock_interview_chatbot import InterviewSystem, QuestionAnswer
+
+    load_dotenv()
+    anthropic_api_key = os.getenv("ANTHROPIC_API_KEY")
+
+    # Persistent storage file
+    QA_STORAGE_FILE = "qa_storage.json"
+    pdf_files = ["inputs/DSA_Book.pdf", "inputs/DSA_Book.pdf"]
+    interview_system = InterviewSystem(
+                llm_api_key=anthropic_api_key,  # Replace with actual API key
+                pdf_paths=pdf_files  # Add paths to necessary PDFs if required
+            )
+    # Load and save question-answer pairs
+    def load_qa_pairs():
+        if os.path.exists(QA_STORAGE_FILE):
+            with open(QA_STORAGE_FILE, "r") as f:
+                return json.load(f)
+        else:
+            qa_pairs = interview_system.generate_qa_pairs(num_pairs=10)
+
+    def save_qa_pairs(qa_pairs):
+        with open(QA_STORAGE_FILE, "w") as f:
+            json.dump(qa_pairs, f, indent=4)
+
+    # Initialize persistent storage for QA pairs
+    qa_pairs = load_qa_pairs()
+
+    def update_chat_history(chat_history, prompt, response):
+        chat_history.append({"user": prompt, "bot": response})
+        return chat_history
+
+    # Streamlit tab for Career Advice Chatbot
+    with st.container():
         st.subheader('Career Advice Chatbot')
         st.write('You can chat with Career Adviser.')
-        chat_container = st.container(height=300)
+        chat_container = st.container()
 
-        # Ensure the necessary documents are uploaded
+        uploaded_resume = st.file_uploader("Upload your resume")
+        uploaded_personal_writeup = st.file_uploader("Upload your personal writeup")
+        jd_url_input = st.text_input("Enter job description URL")
+
         if uploaded_resume and uploaded_personal_writeup and jd_url_input:
-            logger.debug('Starting Career Advice Chatbot')
+            st.write("Setting up the chatbot...")
 
-            # Load files and prepare vector database for chatbot
-            files = file_loading("inputs/contents/")
-            docs = doc_load_split(files)
-            db = build_vectordb(docs)
-            
-            # Process user documents for chatbot context
+            # Load and process user documents
+
             resume_path = os.path.join("streamlit/", uploaded_resume.name)
             personal_writeup_path = os.path.join("streamlit/", uploaded_personal_writeup.name)
             user_resume = docx2txt.process(resume_path)
@@ -185,63 +308,69 @@ def main():
             with open("output/jd.txt", 'r', encoding='utf-8') as file:
                 content = file.read()
                 job_qualifications.append(content)
-            logger.debug("Resume and personal writeup loaded successfully.")
 
-            # Initialize chat history if not already set
-            if 'chat_history' in st.session_state:
-                chat_history = st.session_state['chat_history']
-            else:
-                chat_history = []
+            # Load existing QA pairs into the interview system
+            interview_system.load_qa_pairs(QA_STORAGE_FILE)
 
-            # Store generated responses
-            if "messages" not in st.session_state.keys():
-                st.session_state.messages = [{"role": "assistant", "content": "How may I help you?"}]
+            if 'chat_history' not in st.session_state:
+                st.session_state['chat_history'] = []
+
+            chat_history = st.session_state['chat_history']
 
             # Display chat messages
-            for message in st.session_state.messages:
-                with chat_container.chat_message(message["role"]):
-                    st.write(message["content"])
-            
-            # If vector database is ready, initialize the QA chain
-            if db:
-                chat_history = st.session_state.get('chat_history', [])
-                qa_chain = get_qa_chain(
-                    db, k=3, chain_type="stuff", user_resume=user_resume, 
-                    user_personal_writeup=user_personal_writeup, job_qualifications=job_qualifications,
-                    openai_api_key=openai_api_key, chat_history=chat_history
+            for message in chat_history:
+                role, content = ("assistant", message['bot']) if 'bot' in message else ("user", message['user'])
+                with chat_container.chat_message(role):
+                    st.write(content)
+
+            # Question generation logic
+            def get_question():
+                if random.random() < 0.3 and qa_pairs:
+                    question, answer = random.choice(list(qa_pairs.items()))
+                    return question, answer, True
+                else:
+                    # Generate q-a pair from the the qa_chain function
+                    ### start
+                    question = qa_chain.run({"question": prompt, "chat_history": chat_history})
+                    # answer = 
+                    ## end
+
+                    qa_pairs[question] = answer
+                    save_qa_pairs(qa_pairs)
+                    return question, answer, False
+
+            if prompt := st.chat_input("How can I help you?"):
+                st.session_state['chat_history'].append({'user': prompt})
+                question, answer, from_saved = get_question()
+
+                bot_response = answer if from_saved else "Dynamic Response"  # Replace with real QA chain logic
+                evaluation_score, feedback = interview_system.evaluate_answer(
+                    QuestionAnswer(question, bot_response, "Category", "Difficulty"), prompt
                 )
 
-                # Handle user input in the chat
-                if prompt := st.chat_input("How can I help you?"):
-                    if prompt is not None:
-                        st.session_state.messages.append({'role': 'user', 'content': prompt})
-                        with chat_container.chat_message('user'):
-                            st.write(f'{prompt}')
-                        with chat_container.chat_message('assistant'):
-                            message_placeholder = st.empty()
-                            full_response = ""
-                            bot_response = qa_chain.run({"question": prompt, "chat_history": chat_history})
-                            for chunk in re.findall(r'\S+|\n', bot_response):
-                                full_response += chunk + " "
-                                time.sleep(0.05)
-                                message_placeholder.markdown(full_response + "▌")
-                            message_placeholder.markdown(full_response)
-                            chat_history = update_chat_history(chat_history, prompt, bot_response)
+                st.session_state['chat_history'] = update_chat_history(
+                    st.session_state['chat_history'], prompt, bot_response
+                )
+                st.session_state['chat_history'][-1]['evaluation'] = {
+                    'score': evaluation_score,
+                    'feedback': feedback
+                }
 
-                            # Update chat history in session state
-                            st.session_state['chat_history'] = chat_history
-                            st.session_state.messages.append({'role': 'assistant', 'content': bot_response})
-            else:
-                st.error("Failed to build vector database.")
-                logger.error("Failed to build vector database.")
+                with chat_container.chat_message('assistant'):
+                    st.write(bot_response)
+                    st.write(f"Evaluation Score: {evaluation_score}/10")
+                    st.write(f"Feedback: {feedback}")
 
-            # End chat and collect feedback
-            if 'chat_history' in st.session_state and st.button('Finish the Chat'):
+            if st.button('Finish the Chat'):
                 st.write("Thank you for using the Career Advisor chatbot! Have a great day!")
                 feedback_text = st.text_area("Please provide feedback on your experience with the chatbot:")
                 if st.button("Submit Feedback"):
                     st.write("Feedback submitted. Thank you!")
                     st.stop()
+
+        else:
+            st.error("Please upload your resume, personal writeup, and job description to start.")
+
 
 if __name__ == "__main__":
     main()
